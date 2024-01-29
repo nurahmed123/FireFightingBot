@@ -21,6 +21,7 @@ double temp;
 #define RM1 4  // right motor
 #define RM2 5  // right motor
 #define pump 6
+#define buzzer 11
 
 void setup() {
   pinMode(Left, INPUT);
@@ -31,6 +32,7 @@ void setup() {
   pinMode(RM1, OUTPUT);
   pinMode(RM2, OUTPUT);
   pinMode(pump, OUTPUT);
+  pinMode(buzzer, OUTPUT);
 
   mlx.begin();
   myservo.attach(11);
@@ -48,6 +50,7 @@ void put_off_fire() {
   digitalWrite(RM2, LOW);
 
   digitalWrite(pump, 0);
+  digitalWrite(buzzer, HIGH);
   delay(500);
 
   for (pos = 50; pos <= 130; pos += 1) {
@@ -60,6 +63,7 @@ void put_off_fire() {
   }
 
   digitalWrite(pump, 1);
+  digitalWrite(buzzer, LOW);
   myservo.write(90);
 
   fire = false;
