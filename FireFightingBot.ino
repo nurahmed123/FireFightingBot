@@ -21,7 +21,7 @@ double temp;
 #define RM1 4  // right motor
 #define RM2 5  // right motor
 #define pump 6
-#define buzzer 11
+#define buzzer 7
 
 void setup() {
   pinMode(Left, INPUT);
